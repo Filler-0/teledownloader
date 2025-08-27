@@ -33,7 +33,6 @@ class DownLogger:
             self.info(msg)
 
     def info(self, msg):
-        print(msg)
         bot.edit_message_text(msg, self.chat_id, self.message_id)
 
     def warning(self, msg):
@@ -59,7 +58,6 @@ def download(url, mode, id, message_id=0):
 
 @bot.message_handler(chat_id=[SECURE_ID], commands=['start'])
 def start_handler(message):
-    print(message.chat.id)
     bot.send_message(message.chat.id, "Send link to start downloading")
 
 
